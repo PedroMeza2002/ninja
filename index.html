@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ninja Class Test</title>
 </head>
+
 <body>
     <script>
         class Ninja {
-            constructor(nombre, salud =1, velocidad = 3, fuerza = 3) {
+            constructor(nombre, salud = 1, velocidad = 3, fuerza = 3) {
                 this.nombre = nombre;
                 this.salud = salud;
                 this.velocidad = velocidad;
@@ -35,7 +37,24 @@
         ninja1.sayName();
         ninja1.showStats();
         ninja1.drinkSake();
+        class Sensei extends Ninja {
+            constructor(nombre) {
+                super(nombre, 200, 10, 10);
+                this.sabiduria = 10;
+            }
+
+            speakWisdom() {
+                super.drinkSake();
+                console.log(`${this.nombre} dice: "Lo que un programador puede hacer en un mes, dos programadores pueden hacerlo en dos meses."`);
+            }
+        }
+
+        // Ejemplo de salida
+        const superSensei = new Sensei("Master Splinter");
+        superSensei.speakWisdom();
+        superSensei.showStats();
 
     </script>
 </body>
+
 </html>
