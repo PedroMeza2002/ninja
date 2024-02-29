@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Class Test</title>
+</head>
+<body>
+    <script>
+        class Ninja {
+            constructor(nombre, salud =1, velocidad = 3, fuerza = 3) {
+                this.nombre = nombre;
+                this.salud = salud;
+                this.velocidad = velocidad;
+                this.fuerza = fuerza;
+            }
+
+            sayName() {
+                console.log(`Soy el ninja ${this.nombre}.`);
+            }
+
+            showStats() {
+                console.log(`Nombre: ${this.nombre}`);
+                console.log(`Fuerza: ${this.fuerza}`);
+                console.log(`Velocidad: ${this.velocidad}`);
+                console.log(`Salud: ${this.salud}`);
+            }
+
+            drinkSake() {
+                this.salud += 10;
+                console.log(`${this.nombre} bebió sake y ahora tiene ${this.salud} puntos de salud.`);
+            }
+        }
+        const ninja1 = new Ninja("Hyabusa");
+        ninja1.sayName();
+        ninja1.showStats();
+        ninja1.drinkSake();
+
+    </script>
+</body>
+</html>
